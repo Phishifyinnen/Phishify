@@ -24,7 +24,7 @@ Office1 = '''<html>
 <p>wir haben verdächtige Aktivitäten in Ihrem Office-Konto festgestellt. Bitte bestätigen Sie Ihre Identität, indem Sie auf den folgenden Link klicken und Ihre Daten eingeben: <a href="http://example.com">Office Support</a></p>
 <p>Vielen Dank,<br>Ihr Office Support Team</p>
 <hr style="border: 0; border-top: 0.5px solid gray; width: 100%; margin: 0px auto;">
-<p style="font-size: 9px; color: gray;">Diese E-Mail wurde Automatisch generiert, sollten sie probleme haben wenden sie sich an unseren Kunsenservice: https://support.microsoft.com/de-de/contactus#</p>
+<p style="font-size: 10px; color: gray;">Diese E-Mail wurde automatisch generiert. Sollten Sie Probleme haben, wenden Sie sich bitte an unseren <a href="https://support.microsoft.com/de-de/contactus#">Kundenservice</a>.</p>
 </body>
 </html>
 '''
@@ -36,7 +36,7 @@ Office2 = f'''<html>
 <p>um die Sicherheit Ihres Office-Kontos zu gewährleisten, müssen wir Ihre Kontoinformationen aktualisieren. Klicken Sie bitte hier: <a href="http://example.com">Office Anmeldung</a></p>
 <p>Mit freundlichen Grüßen,<br>Office Support</p>
 <hr style="border: 0; border-top: 0.5px solid gray; width: 100%; margin: 0px auto;">
-<p style="font-size: 9px; color: gray;">Diese E-Mail wurde Automatisch generiert, sollten sie probleme haben wenden sie sich an unseren Kunsenservice: https://support.microsoft.com/de-de/contactus#</p>
+<p style="font-size: 10px; color: gray;">Diese E-Mail wurde automatisch generiert. Sollten Sie Probleme haben, wenden Sie sich bitte an unseren <a href="https://support.microsoft.com/de-de/contactus#">Kundenservice</a>.</p>
 </body>
 </html>
 '''
@@ -48,7 +48,7 @@ Office3 = '''<html>
 <p>Ihr Office 365-Abonnement wird in 3 Tagen ablaufen. Bitte verlängern Sie es sofort, um Unterbrechungen zu vermeiden: <a href="http://example.com">Office Login</a></p>
 <p>Danke,<br>Office Support</p>
 <hr style="border: 0; border-top: 0.5px solid gray; width: 100%; margin: 0px auto;">
-<p style="font-size: 9px; color: gray;">Diese E-Mail wurde Automatisch generiert, sollten sie probleme haben wenden sie sich an unseren Kunsenservice: https://support.microsoft.com/de-de/contactus#</p>
+<p style="font-size: 10px; color: gray;">Diese E-Mail wurde automatisch generiert. Sollten Sie Probleme haben, wenden Sie sich bitte an unseren <a href="https://support.microsoft.com/de-de/contactus#">Kundenservice</a>.</p>
 </body>
 </html>
 '''
