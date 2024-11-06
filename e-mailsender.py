@@ -2,8 +2,7 @@ import random
 import smtplib
 from email.mime.text import MIMEText
 
-name = []
-
+# Beispielnachrichten
 Office1 = '''Sehr geehrter Benutzer,
 wir haben verdächtige Aktivitäten in Ihrem Office-Konto festgestellt. Bitte bestätigen Sie Ihre Identität, indem Sie auf den folgenden Link klicken und Ihre Daten eingeben: Office Support
 Vielen Dank,
@@ -24,33 +23,37 @@ Office Support
 
 mailText = [Office3, Office2, Office1]
 
-# Hier wird die E-Mail-Adresse ausgewählt
+# Hier wird die E-Mail-Adresse und der Name aus der Datei extrahiert
+names_and_emails = []
 with open('Name.txt') as f:
-    name = [line.rstrip() for line in f]
+    lines = f.readlines()
+    for i in range(0, len(lines), 2):
+        email = lines[i].strip()
+        name = lines[i+1].strip()
+        names_and_emails.append((email, name))
 
-RandomName = random.choice(name)
+# Zufällige E-Mail und Name auswählen
+random_email, random_name = random.choice(names_and_emails)
 
-print(RandomName)
-
-# E-Mail-Adresse und Betreff definieren
-email = "teacherfisher.innen@gmail.com"
-subject = f"Sicherheitswarnung an {RandomName}"
+# Betreff definieren und Nachricht auswählen
+subject = f"Sicherheitswarnung an {random_name}"
 message = random.choice(mailText)
 
 # MIMEText-Objekt erstellen, das die Kodierung spezifiziert
 mime_message = MIMEText(message, "plain", "utf-8")
-mime_message["From"] = email
-mime_message["To"] = RandomName
+mime_message["From"] = "teacherfisher.innen@gmail.com"
+mime_message["To"] = random_email
 mime_message["Subject"] = subject
 
 # SMTP-Server-Verbindung herstellen und Nachricht senden
 server = smtplib.SMTP("smtp.gmail.com", 587)
 server.starttls()
 
-server.login(email, "czqc rfzf qijm vvnf")
+server.login("teacherfisher.innen@gmail.com", "czqc rfzf qijm vvnf")
 
-# Nachricht senden (nur `mime_message.as_string()` verwenden)
-server.sendmail(email, RandomName, mime_message.as_string())
+# Nachricht senden
+server.sendmail("teacherfisher.innen@gmail.com", random_email, mime_message.as_string())
 
+print(f"E-Mail gesendet an {random_name} ({random_email})")
+print("Nachricht:")
 print(message)
-print("Email sent to " + RandomName)
