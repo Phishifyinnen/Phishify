@@ -6,19 +6,19 @@ import random
 name = []
 
 Office1 = '''Sehr geehrter Benutzer,
-wir haben verdächtige Aktivitäten in Ihrem Office-Konto festgestellt. Bitte bestätigen Sie Ihre Identität, indem Sie auf den folgenden Link klicken und Ihre Daten eingeben: Office Suport
+wir haben verdaechtige Aktivitäten in Ihrem Office-Konto festgestellt. Bitte bestaetigen Sie Ihre Identitaet, indem Sie auf den folgenden Link klicken und Ihre Daten eingeben: Office Suport
 Vielen Dank,
 Ihr Office Support Team
 '''
 
 Office2 = '''Hallo,
 um die Sicherheit Ihres Office-Kontos zu gewaehrleisten, muessen wir Ihre Kontoinformationen aktualisieren. Klicken Sie bitte hier: [Link]
-Mit freundlichen Grüßen,
+Mit freundlichen Grueßen,
 Office Support
 '''
 
 Office3 = '''Lieber Kunde,
-Ihr Office 365-Abonnement wird in 3 Tagen ablaufen. Bitte verlängern Sie es sofort, um Unterbrechungen zu vermeiden: [Link]
+Ihr Office 365-Abonnement wird in 3 Tagen ablaufen. Bitte verlaengern Sie es sofort, um Unterbrechungen zu vermeiden: [Link]
 Danke,
 Office Support
 '''
@@ -40,7 +40,7 @@ email = "teacherfisher.innen@gmail.com"
 #receiver_email = input("Receiver E-Mail:")
 
 subject = ("Sicherheitswarnung an " + RandomName)
-message = (random.choice(messagteText))
+message = (random.choice(mailText))
 
 text = f"Subject: {subject}\n\n{message}"
 
