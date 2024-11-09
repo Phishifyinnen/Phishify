@@ -1,0 +1,42 @@
+div {
+    background-color: #778DA9;
+    margin: auto;
+    width: 388px;
+    height: 65px;
+    border-radius: 90px;
+    text-align: center;
+    font-size: 50px;
+    font-family: Ubuntu;
+    font-style: revert;
+    font-weight: lighter;
+    display: grid;
+    place-items: center;
+    grid-auto-flow: column;
+    gap: 10px;
+    justify-content: center;
+}
+button {
+    text-align: -moz-center;
+    background-color: #1B263B;
+    height: 60px;
+    width: 120px;
+    font-size: 30px;
+    color: white;
+    border-radius: 30px;
+    border-width: 0px;
+    padding: 10px 20px;
+    justify-content: center;
+    gap: 10px;
+
+}
+button:hover {
+    background-color: #E0E1DD;
+     color: black;
+}
+button:active {
+    background-color: white;
+    color: black
+}
+body {
+    background-color: #1B263B;
+}
