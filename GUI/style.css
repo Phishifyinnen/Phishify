@@ -74,6 +74,7 @@ textarea {
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
     place-items: center;
     place-content: center;
+    font-family: Calibri;
 }
 #speichernButton{
     display: grid;
@@ -91,4 +92,35 @@ textarea {
 #speichernButton:hover{
     background-color: white;
     color: black;
+}
+
+footer{
+     position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #778DA9;
+            padding: 10px;
+            text-align: center;
+    font-family: Calibri;
+}
+
+#Back_Button{
+    position: absolute;
+    width: 80px;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
+}
+#Campaign{
+    display: grid;
+    margin: auto;
+    margin-top: 300px;
+    width: 200px;
+    background-color: #778DA9;
+    color: black;
+}
+#Campaign:hover{
+    background-color: #E0E1DD;
+}
+#Campaign:active{
+    background-color: white;
 }
