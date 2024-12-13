@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider für Zeitintervall</title>
+    <link rel="stylesheet" href="StyleForSettings.css">
+</head>
+<body>
+
+<div class="main-container">
+    <h1 id="SetUpCmpgn">Set Up Campaign</h1>
+
+    <div class="slider-container">
+        <p style="margin: 2px;">Zeitintervall: <span id="sliderValue">1</span> Tage</p>
+        <input type="range" id="intervalSlider" min="86400" max="2678400" value="86400" step="86400" oninput="updateValueDays()">
+    </div>
+
+    <div class="slider-container">
+        <p style="margin: 2px;">Anzahl der E-Mails: <span id="sliderValueNumber">1</span></p>
+        <input type="range" id="intervalSliderNumber" min="1" max="31" value="1" step="1" oninput="updateValueNumber()">
+    </div>
+
+    <div>
+    <button>Fertig</button>
+    </div>
+
+</div>
+
+
+
+<script>
+    // Funktion zur Aktualisierung des Anzeigewerts für den ersten Slider (Zeitintervall)
+    function updateValueDays() {
+        const slider = document.getElementById("intervalSlider");
+        const display = document.getElementById("sliderValue");
+        const valueInDays = Math.round(slider.value / 86400); // Slider-Wert in ganze Tage umwandeln
+        display.textContent = valueInDays; // Aktualisiere die Anzeige
+    }
+
+    // Funktion zur Aktualisierung des Anzeigewerts für den zweiten Slider (Anzahl der E-Mails)
+    function updateValueNumber() {
+        const slider = document.getElementById("intervalSliderNumber");
+        const display = document.getElementById("sliderValueNumber");
+        display.textContent = slider.value; // Aktualisiere die Anzeige mit dem aktuellen Wert
+    }
+</script>
+
+</body>
+</html>
