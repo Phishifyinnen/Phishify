@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider für Zeitintervall</title>
+    <link rel="stylesheet" href="StyleForSettings.css">
+</head>
+<body>
+
+<div class="main-container">
+    <h1 id="SetUpCmpgn">Set Up Campaign</h1>
+
+    <div class="slider-container">
+        <label for="intervalSlider">Zeitintervall: <span id="sliderValue">1</span> Tage</label>
+        <input type="range" id="intervalSlider" min="86400" max="2678400" value="86400" step="86400" oninput="updateValues()">
+    </div>
+
+    <div class="slider-container">
+        <label for="intervalSliderNumber">Anzahl der E-Mails: <span id="sliderValueNumber">1</span></label>
+        <input type="range" id="intervalSliderNumber" min="1" max="31" value="1" step="1" oninput="updateValues()">
+    </div>
+
+    <form action="/save" method="post">
+        <!-- Versteckte Eingabefelder, die dynamisch aktualisiert werden -->
+        <input type="hidden" id="hiddenInterval" name="num1" value="86400">
+        <input type="hidden" id="hiddenEmails" name="num2" value="1">
+        <button type="submit">Speichern</button>
+
+    </form>
+</div>
+
+<script>
+    // Funktion zur Aktualisierung der Werte
+    function updateValues() {
+        // Zeitintervall-Slider aktualisieren
+        const intervalSlider = document.getElementById("intervalSlider");
+        const intervalDisplay = document.getElementById("sliderValue");
+        const intervalHidden = document.getElementById("hiddenInterval");
+        const valueInDays = Math.round(intervalSlider.value / 86400); // Wert in Tagen
+        intervalDisplay.textContent = valueInDays;
+        intervalHidden.value = intervalSlider.value; // Verstecktes Feld aktualisieren
+
+        // Anzahl der E-Mails-Slider aktualisieren
+        const emailSlider = document.getElementById("intervalSliderNumber");
+        const emailDisplay = document.getElementById("sliderValueNumber");
+        const emailHidden = document.getElementById("hiddenEmails");
+        emailDisplay.textContent = emailSlider.value;
+        emailHidden.value = emailSlider.value; // Verstecktes Feld aktualisieren
+    }
+
+    // Initiale Werte setzen
+    updateValues();
+</script>
+
+</body>
+</html>

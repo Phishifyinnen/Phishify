@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+    <meta charset="UTF-8">
+</head>
+
+
+<div>
+    <a href="Phishify_List.html" id="listButton">
+    <button><i class="fa-solid fa-list-ul"></i></button>
+    </a>
+    <a href="Phishify_Home.html" id="homeButton">
+    <button><i class="fa-solid fa-house"></i></button>
+    </a>
+    <a href="Phishify_Status.html" id="statusButton">
+    <button><i class="fa-solid fa-circle-check"></i></button>
+    </a>
+</div>
+<script>
+    // Ermittelt den Dateinamen der aktuellen Seite
+    const currentPage = window.location.pathname.split("/").pop();
+
+    // Weist basierend auf dem Dateinamen eine aktive Klasse zu
+    if (currentPage === "Phishify_List.html") {
+        document.getElementById("listButton").querySelector("button").classList.add("active");
+    } else if (currentPage === "Phishify_Home.html") {
+        document.getElementById("homeButton").querySelector("button").classList.add("active");
+    } else if (currentPage === "Phishify_Status.html") {
+        document.getElementById("statusButton").querySelector("button").classList.add("active");
+    }
+</script>
+<body>
+
+
+<a href="kakacke.html">
+    <button id="Campaign">Configure Campaign</button>
+</a>
+
+  <a href="benistdoof">
+      <button id="Campaign">Start Campaign</button>
+  </a>
+
+<footer>Phishify</footer>
+</body>
+</html>
