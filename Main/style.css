@@ -1,9 +1,9 @@
 
 :root{
-    --accent-color: #0D1B2A;
+    --accent-color: #1B263B;
     --base-color: white;
     --text-color: black;
-    --input-color: #1B263B;
+    --input-color: #0D1B2A;
     --button-color: #778DA9;
 }
 .darkmode{
