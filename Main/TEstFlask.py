@@ -124,7 +124,7 @@ def save_to_file():
     with open('output.txt', 'w', encoding='utf-8') as f:
         f.write(f"{num1}\n{num2}")
 
-    return redirect(Phis)  # Weiterleitung zurück zur Startseite
+    return redirect()  # Weiterleitung zurück zur Startseite
 
 
 
