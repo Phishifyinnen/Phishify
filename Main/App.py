@@ -128,13 +128,13 @@ def run_script():
 @app.route('/kakacke.html')
 def Kakacke():
     # Gibt den Inhalt der Datei "Kakacke.html" zurück
-    with open("Kakacke.html") as file:
+    with open("Campaign_Settings.html") as file:
         return file.read()
 
 # Index-Funktion (scheint nicht genutzt zu werden)
 def index():
-    with open("kakacke.html") as file:
-        return render_template('kakacke.html', num1=number1, num2=number2)
+    with open("Campaign_Settings.html") as file:
+        return render_template('Campaign_Settings.html', num1=number1, num2=number2)
 
 # Route für eine weitere CSS-Datei
 @app.route('/StyleForSettings.css')
