@@ -114,7 +114,7 @@ form button{
     text-transform: uppercase;
     cursor: pointer;
     transition: 150ms ease;
-}
+    }
 form button:hover{
     background-color: var(--text-color);
 }
@@ -147,6 +147,7 @@ form div.incorrect input{
 #error-message{
     color: #f06272;
 }
+
 #theme-switch{
     height: 50px;
     width: 50px;

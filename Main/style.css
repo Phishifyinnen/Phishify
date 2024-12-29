@@ -1,19 +1,19 @@
 
 :root{
-    --accent-color: #1B263B;
+    --accent-color: #0D1B2A;
     --base-color: white;
     --text-color: black;
-    --input-color: rgba(119, 141, 169, 0.34);
-    --button-color: #415A77;
+    --input-color: #1B263B;
+    --button-color: #778DA9;
 }
 .darkmode{
-    --accent-color: #415A77;
+    --accent-color: #778DA9;
     --base-color: black;
     --text-color: white;
-    --input-color: rgb(119, 141, 169);
+    --input-color: #778DA9;
     --button-color: #1B263B;
 }
-div {
+.containerfortop{
     background-color: var(--button-color);
     margin: auto;
     margin-top: 20px;
@@ -37,7 +37,7 @@ button {
     width: 120px;
     font-size: 25px;
     font-family: sans-serif;
-    color: var(--base-color);
+    color: var(--text-color);
     border-radius: 30px;
     border-width: 0px;
     padding: 10px;
@@ -135,38 +135,54 @@ footer{
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
   font-family: sans-serif;
 }
-#Campaign{
-    display: grid;
-    margin: auto;
-    margin-top: 300px;
-    width: 250px;
-    background-color: var(--button-color);
+.container{
     color: black;
-  font-family: sans-serif;
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 650px;
+}
+#Campaign{
+    background-color: var(--button-color);
+    color: var(--base-color);
+    font-family: "Segoe UI";
+    font-weight: bolder;
+    height: 100px;
+    width: 200px;
 }
 #Campaign:hover{
     background-color: var(--base-color);
-  font-family: sans-serif;
-}
-#Campaign:active{
-    background-color: var(--base-color);
-  font-family: sans-serif;
+    color: var(--text-color);
 }
 #userList {
     border-radius: 0px; /* Kommentarzeichen entfernt */
     display: flex;
-    gap: 5px;
+    gap: 25px;
     flex-direction: column;
-    width: 450px; /* 'widh' zu 'width' korrigiert */
-    height: 1200px;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* 'widh' zu 'width' korrigiert */
+    height: 100%;
+    border: black;
 }
 
 .users_userList {
     border-radius: 0px;
     padding: 10px;
     text-align: center;
+    height: 50px;
     width: 400px;
+    background-color: var(--button-color);
+    border-radius: 20px 20px 20px 20px;
+    font-family: Poppins, "Segoe UI", sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
+}
+#Hyperlink{
+    text-decoration: none;
 }
 #theme-switch{
     height: 50px;

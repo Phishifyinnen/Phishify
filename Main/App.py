@@ -125,7 +125,7 @@ def run_script():
     return redirect(url_for('Home'))
 
 # Route für eine weitere Seite (Kakacke)
-@app.route('/kakacke.html')
+@app.route('/Campaign_Settings.html')
 def Kakacke():
     # Gibt den Inhalt der Datei "Kakacke.html" zurück
     with open("Campaign_Settings.html") as file:
@@ -145,7 +145,7 @@ def StyleForSettings():
 
 # Route zum Speichern von Daten in einer Datei
 @app.route('/save', methods=['POST'])
-def save_to_file():
+def save():
     # Zahlen aus dem Formular abrufen
     num1 = request.form['num1']
     num2 = request.form['num2']
@@ -155,8 +155,9 @@ def save_to_file():
         f.write(f"{num1}\n{num2}")
 
     # Fehlerhafte Weiterleitung (Phis scheint undefiniert zu sein)
-    return redirect(Phis)  # Weiterleitung zurück zur Startseite
+    return redirect(url_for('Home'))  # Weiterleitung zurück zur Startseite
 
 # Einstiegspunkt der Flask-Anwendung
 if __name__ == '__main__':
     app.run(debug=True)
+
