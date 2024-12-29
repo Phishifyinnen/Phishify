@@ -1,7 +1,20 @@
 
-
+:root{
+    --accent-color: #1B263B;
+    --base-color: white;
+    --text-color: black;
+    --input-color: rgba(119, 141, 169, 0.34);
+    --button-color: #415A77;
+}
+.darkmode{
+    --accent-color: #415A77;
+    --base-color: black;
+    --text-color: white;
+    --input-color: rgb(119, 141, 169);
+    --button-color: #1B263B;
+}
 div {
-    background-color: #778DA9;
+    background-color: var(--button-color);
     margin: auto;
     margin-top: 20px;
     width: 388px;
@@ -19,12 +32,12 @@ div {
 
 }
 button {
-    background-color: #1B263B;
+    background-color: var(--accent-color);
     height: 60px;
     width: 120px;
     font-size: 25px;
-   font-family: sans-serif;
-    color: white;
+    font-family: sans-serif;
+    color: var(--base-color);
     border-radius: 30px;
     border-width: 0px;
     padding: 10px;
@@ -33,30 +46,29 @@ button {
     gap: 10px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 
-
 }
 
 button:hover {
-    background-color: #E0E1DD;
-     color: black;
+    background-color: var(--base-color);
+     color: var(--text-color);
      box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
    font-family: sans-serif;
 }
 button:active {
-    background-color: white;
-    color: black;
+    background-color: var(--base-color);
+    color: var(--text-color);
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
       font-family: sans-serif;
 }
 body {
 
-    background-color: #1B263B;
+    background-color: var(--accent-color);
       font-family: sans-serif;
 }
 .active {
-    background-color: #415A77;
+    background-color: var(--button-color);
     font-family: sans-serif;
-    color: white;
+    color: var(--base-color);
 }
 textarea {
   font-family: sans-serif;
@@ -64,45 +76,46 @@ textarea {
     height: 400px;
     font-size: 16px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--base-color);
     border-radius: 4px;
     resize: vertical;
 }
 h1 {
     display: grid;
     place-items: center;
-    color: white;
+    color: var(--base-color);
   font-family: sans-serif;
 }
 textarea {
     display: grid;
     margin: auto;
     max-width: 600px;
-    background-color: #778DA9;
+    background-color: var(--button-color);
     width: 1200px;
     border-radius: 25px;
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
     place-items: center;
     place-content: center;
-  font-family: sans-serif;
+   font-family: sans-serif;
+    font-weight: bold;
 }
 #speichernButton{
     display: grid;
     margin: auto;
     margin-top: 10px;
     place-items: center;
-    background-color: #778DA9;
-    color: black;
+    background-color: var(--button-color);
+    color: var(--text-color);
   font-family: sans-serif;
 }
 
 #speichernButton:active{
-    background-color: #E0E1DD;
-    color: black;
+    background-color: var(--base-color);
+    color: var(--text-color);
 }
 #speichernButton:hover{
-    background-color: white;
-    color: black;
+    background-color: var(--base-color);
+    color: var(--text-color);
 }
 
 footer{
@@ -110,7 +123,7 @@ footer{
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #778DA9;
+            background-color: var(--button-color);
             padding: 10px;
             text-align: center;
   font-family: sans-serif;
@@ -127,16 +140,17 @@ footer{
     margin: auto;
     margin-top: 300px;
     width: 250px;
-    background-color: #778DA9;
+    background-color: var(--button-color);
     color: black;
   font-family: sans-serif;
+    text-decoration: none;
 }
 #Campaign:hover{
-    background-color: #E0E1DD;
+    background-color: var(--base-color);
   font-family: sans-serif;
 }
 #Campaign:active{
-    background-color: white;
+    background-color: var(--base-color);
   font-family: sans-serif;
 }
 #userList {
@@ -154,4 +168,28 @@ footer{
     text-align: center;
     width: 400px;
 }
-
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+#theme-switch svg{
+    fill: var(--base-color);
+}
+#theme-switch svg:first-child{
+    display: none;
+}
+.darkmode #theme-switch svg:last-child{
+    display: none;
+}
+.darkmode #theme-switch svg:first-child{
+    display: block;
+}

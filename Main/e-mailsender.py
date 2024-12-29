@@ -108,5 +108,6 @@ for i in range(0, haeufigkeit):
     print(f"Wartezeit: {time_interval_seconds} Sekunden")
     time.sleep(time_interval_seconds)
 
+
 # Server schließen
 server.quit()

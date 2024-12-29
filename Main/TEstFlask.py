@@ -5,16 +5,37 @@ from flask import Flask, render_template, redirect, url_for, request, jsonify
 import os
 import subprocess
 
+
+
 app = Flask(__name__)
 # Zwei Beispielzahlen, die übergeben werden sollen
 number1 = 42
 number2 = 17
 
 
+
 # Route für die Startseite
 @app.route('/')
 def Start():
-    with open("Phishify_Home.html") as file:
+    with open("Phishify_Signup.html") as file:
+        return file.read()
+
+@app.route('/Phishify_Login.html')
+def Login():
+    with open("Phishify_Login.html") as file:
+        return file.read()
+@app.route('/Phishify_Signup.html')
+def Signup():
+    with open("Phishify_Signup.html") as file:
+        return file.read()
+@app.route('/validation.js')
+def Validation():
+    with open("validation.js") as file:
+        return file.read()
+
+@app.route('/darkmode.js')
+def Darkmode():
+    with open("darkmode.js") as file:
         return file.read()
 @app.route('/Phishify_Home.html')
 def Home():
@@ -38,11 +59,14 @@ def Listtxt():
     with open("Name.txt") as file:
         return file.read()
 
-
-
 @app.route('/style.css')
 def css():
         with open("style.css") as file:
+            return flask.Response( file.read(), mimetype="text/css")
+
+@app.route('/StyleLogin.css')
+def csslogin():
+        with open("StyleLogin.css") as file:
             return flask.Response( file.read(), mimetype="text/css")
 @app.route('/save_text', methods=['POST'])
 def save_text():
@@ -100,7 +124,8 @@ def save_to_file():
     with open('output.txt', 'w', encoding='utf-8') as f:
         f.write(f"{num1}\n{num2}")
 
-    return redirect(url_for('Home'))  # Weiterleitung zurück zur Startseite
+    return redirect(Phis)  # Weiterleitung zurück zur Startseite
+
 
 
 
