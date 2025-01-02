@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root{
     --accent-color: #1B263B;
     --base-color: white;
@@ -28,7 +28,7 @@
     gap: 10px;
     justify-content: center;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    font-family: sans-serif;
+    font-family: Poppins, "Segoe UI", sans-serif;
 
 }
 button {
@@ -52,22 +52,22 @@ button:hover {
     background-color: var(--base-color);
      color: var(--text-color);
      box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
-   font-family: sans-serif;
+   font-family: Poppins, "Segoe UI", sans-serif;
 }
 button:active {
     background-color: var(--base-color);
     color: var(--text-color);
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-      font-family: sans-serif;
+      font-family: Poppins, "Segoe UI", sans-serif;
 }
 body {
 
     background-color: var(--accent-color);
-      font-family: sans-serif;
+      font-family: Poppins, "Segoe UI", sans-serif;
 }
 .active {
     background-color: var(--button-color);
-    font-family: sans-serif;
+    font-family: Poppins, "Segoe UI", sans-serif;
     color: var(--base-color);
 }
 textarea {
@@ -84,7 +84,7 @@ h1 {
     display: grid;
     place-items: center;
     color: var(--base-color);
-  font-family: sans-serif;
+  font-family: Poppins, "Segoe UI", sans-serif;
 }
 textarea {
     display: grid;
@@ -96,7 +96,7 @@ textarea {
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
     place-items: center;
     place-content: center;
-   font-family: sans-serif;
+   font-family: Poppins, "Segoe UI", sans-serif;
     font-weight: bold;
 }
 #speichernButton{
@@ -106,7 +106,7 @@ textarea {
     place-items: center;
     background-color: var(--button-color);
     color: var(--text-color);
-  font-family: sans-serif;
+  font-family: Poppins, "Segoe UI", sans-serif;
 }
 
 #speichernButton:active{
@@ -126,7 +126,7 @@ footer{
             background-color: var(--button-color);
             padding: 10px;
             text-align: center;
-  font-family: sans-serif;
+  font-family: Poppins, "Segoe UI", sans-serif;
 }
 
 #Back_Button{
@@ -147,7 +147,7 @@ footer{
 #Campaign{
     background-color: var(--button-color);
     color: var(--base-color);
-    font-family: "Segoe UI";
+    font-family: Poppins, "Segoe UI", sans-serif;
     font-weight: bolder;
     height: 100px;
     width: 200px;

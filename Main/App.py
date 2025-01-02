@@ -46,6 +46,7 @@ def Darkmode():
     with open("darkmode.js") as file:
         return file.read()
 
+
 # Route für die Home-Seite
 @app.route('/Phishify_Home.html')
 def Home():
@@ -161,25 +162,44 @@ def save():
 
 @app.route('/savepassword', methods=['POST'])
 def save_username():
-    # Hole den Benutzernamen aus dem Formular
+    username = request.form['firstname']
+    email = request.form['email']
+    password = request.form['password']
 
-    username = request.form.get('firstname')
-    email = request.form.get('email')
-    password = request.form.get('password')
+    # Überprüfen, ob die E-Mail bereits existiert
+    with open("usernames.txt", "r") as file:
+        lines = [line.strip() for line in file if line.strip() != ""]  # Leere Zeilen ignorieren
 
-    # Speichere den Benutzernamen in ein Textdokument
+    emailinuse = {'emailinuse': False}
+    print(emailinuse)
 
-    try:
-        with open("usernames.txt", "a") as file:  # "a" für Anhängen (append)
-            file.write("\n")
-            file.write(username + "\n")
-            file.write(email + "\n")
-            file.write(password + "\n")
+    for i in range(0, len(lines), 3):  # 3 Zeilen pro Benutzer (E-Mail, Passwort, Username)
+        stored_email = lines[i]
+        if stored_email == email:
+            emailinuse= {'emailinuse': True}
+            print(emailinuse)
 
-            return redirect(url_for('Home'))  # Weiterleitung zurück zur Startseite
+    # Wenn die E-Mail nicht existiert, neuen Benutzer hinzufügen
+    with open("usernames.txt", "a") as file:  # "a" für Anhängen (append)
+        file.write(email + "\n")
+        file.write(password + "\n")
+        file.write(username + "\n")
 
-    except Exception as e:
-        return f"Fehler beim Speichern: {e}"
+    return redirect(url_for('Home'))  # Weiterleitung zur Startseite
+
+@app.route('/emailinuse', methods=['POST'])
+def emailinuse():
+    with open("usernames.txt", "r") as file:
+        lines = [line.strip() for line in file if line.strip() != ""]  # Leere Zeilen ignorieren
+
+    emailinuse = {'emailinuse': False}
+    print(emailinuse)
+
+    for i in range(0, len(lines), 3):  # 3 Zeilen pro Benutzer (E-Mail, Passwort, Username)
+        stored_email = lines[i]
+        if stored_email == email:
+            emailinuse= {'emailinuse': True}
+            print(emailinuse)
 
 @app.route('/usernames.txt')
 def Usernametxt():
@@ -196,8 +216,8 @@ def login():
         with open("usernames.txt", "r") as file:
             lines = [line.strip() for line in file if line.strip() != ""]
             for i in range(0, len(lines), 3):  # 3 Zeilen pro Benutzer (E-Mail, Passwort, Username)
-                stored_email = lines[i + 1].strip()
-                stored_password = lines[i + 2].strip()
+                stored_email = lines[i].strip()
+                stored_password = lines[i + 1].strip()
 
         if stored_email == email and stored_password == password:
             return redirect(url_for('Home'))  # Login erfolgreich, Weiterleitung zur Startseite
