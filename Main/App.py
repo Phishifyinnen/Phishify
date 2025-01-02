@@ -157,6 +157,57 @@ def save():
     # Fehlerhafte Weiterleitung (Phis scheint undefiniert zu sein)
     return redirect(url_for('Home'))  # Weiterleitung zurück zur Startseite
 
+
+
+@app.route('/savepassword', methods=['POST'])
+def save_username():
+    # Hole den Benutzernamen aus dem Formular
+
+    username = request.form.get('firstname')
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    # Speichere den Benutzernamen in ein Textdokument
+
+    try:
+        with open("usernames.txt", "a") as file:  # "a" für Anhängen (append)
+            file.write("\n")
+            file.write(username + "\n")
+            file.write(email + "\n")
+            file.write(password + "\n")
+
+            return redirect(url_for('Home'))  # Weiterleitung zurück zur Startseite
+
+    except Exception as e:
+        return f"Fehler beim Speichern: {e}"
+
+@app.route('/usernames.txt')
+def Usernametxt():
+    # Gibt den Inhalt der Datei "Name.txt" zurück
+    with open("usernames.txt") as file:
+        return file.read()
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        # Überprüfen, ob E-Mail und Passwort in der Datei vorhanden sind
+        with open("usernames.txt", "r") as file:
+            lines = [line.strip() for line in file if line.strip() != ""]
+            for i in range(0, len(lines), 3):  # 3 Zeilen pro Benutzer (E-Mail, Passwort, Username)
+                stored_email = lines[i + 1].strip()
+                stored_password = lines[i + 2].strip()
+
+        if stored_email == email and stored_password == password:
+            return redirect(url_for('Home'))  # Login erfolgreich, Weiterleitung zur Startseite
+        else:
+            # Wenn keine Übereinstimmung gefunden wird
+            return "Invalid login credentials. Please try again."
+
+    return render_template('Phishify_Login.html')  # Falls GET-Anfrage, Formular anzeigen
+
+
 # Einstiegspunkt der Flask-Anwendung
 if __name__ == '__main__':
     app.run(debug=True)
