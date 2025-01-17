@@ -40,6 +40,9 @@
     }
 </script>
 <br>
+<button onclick="reported()">Reported</button>
+<button onclick="nothing()">Nothing</button>
+<button onclick="failed()">Failed</button>
 <div id="userList">
     <div class="users_userList">user1</div>
     <div class="users_userList">user2</div>
@@ -50,6 +53,47 @@
     <div class="users_userList">user7</div>
     <div class="users_userList">user8</div>
 </div>
+<script>
+// Get the root element
+var r = document.querySelector(':root');
+//Muss geändert werden zu "Reported", "Nothing" oder "Failed"
+let status;
+
+// Create a function for getting a variable value
+function myFunction_get() {
+  // Get the styles (properties and values) for the root
+  var rs = getComputedStyle(r);
+  // Alert the value of the --status-color variable
+  alert("The value of --status-color is: " + rs.getPropertyValue('--status-color'));
+}
+function reported() {
+  status = "Reported";
+  changeColor();
+}
+function nothing() {
+  status = "Nothing";
+  changeColor();
+}
+function failed() {
+  status = "Failed";
+  changeColor();
+}
+function changeColor() {
+  if (status === "Reported") {
+    // Set the value of variable --status-color to another value
+    r.style.setProperty('--status-color', 'green');
+  }
+  if (status === "Nothing") {
+    // Set the value of variable --status-color to another value
+    r.style.setProperty('--status-color', 'grey');
+  }
+  if (status === "Failed") {
+    // Set the value of variable --status-color to another value
+    r.style.setProperty('--status-color', 'red');
+  }
+
+}
+</script>
 
 </body>
 
