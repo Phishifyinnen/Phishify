@@ -5,6 +5,7 @@
     --text-color: black;
     --input-color: #0D1B2A;
     --button-color: #778DA9;
+    --status-color: #black;
 }
 .darkmode{
     --accent-color: #778DA9;
@@ -169,12 +170,13 @@ footer{
 }
 
 .users_userList {
+
     border-radius: 0px;
     padding: 10px;
     text-align: center;
     height: 50px;
     width: 400px;
-    background-color: var(--button-color);
+    background-color: var(--status-color);
     border-radius: 20px 20px 20px 20px;
     font-family: Poppins, "Segoe UI", sans-serif;
     font-size: 40px;
