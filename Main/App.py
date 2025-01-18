@@ -125,24 +125,10 @@ def run_script():
     # Weiterleitung zur Home-Seite
     return redirect(url_for('Home'))
 
-# Route für eine weitere Seite (Kakacke)
-@app.route('/Campaign_Settings.html')
-def Kakacke():
-    # Gibt den Inhalt der Datei "Kakacke.html" zurück
-    with open("Campaign_Settings.html") as file:
-        return file.read()
-
 # Index-Funktion (scheint nicht genutzt zu werden)
 def index():
-    with open("Campaign_Settings.html") as file:
+    with open("../Website/Campaign_Settings.html") as file:
         return render_template('Campaign_Settings.html', num1=number1, num2=number2)
-
-# Route für eine weitere CSS-Datei
-@app.route('/StyleForSettings.css')
-def StyleForSettings():
-    # Gibt den Inhalt der Datei "StyleForSettings.css" mit dem MIME-Typ "text/css" zurück
-    with open("StyleForSettings.css") as file:
-        return flask.Response(file.read(), mimetype="text/css")
 
 # Route zum Speichern von Daten in einer Datei
 @app.route('/save', methods=['POST'])

@@ -7,9 +7,13 @@
     <list default="true" id="9c0dedf2-1a93-44ff-8260-6cc32de666ec" name="Changes" comment="Add files via upload">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Name.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Name.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/Campaign_Settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/Website/Campaign_Settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/Phishify_Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Phishify_Home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/Phishify_Status.html" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Phishify_Status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/StyleForSettings.css" beforeDir="false" afterPath="$PROJECT_DIR$/Website/StyleForSettings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Main/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Main/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Main/validation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +36,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;HannesMarek&quot;
-  }
+  &quot;lastFilter&quot;: {}
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -121,6 +122,9 @@
       <workItem from="1735768658036" duration="5605000" />
       <workItem from="1735774375516" duration="4223000" />
       <workItem from="1735817615346" duration="28950000" />
+      <workItem from="1737200867823" duration="1170000" />
+      <workItem from="1737207170269" duration="92000" />
+      <workItem from="1737207317950" duration="3126000" />
     </task>
     <task id="LOCAL-00001" summary="Add files via upload">
       <option name="closed" value="true" />
@@ -188,6 +192,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add files via upload" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Phishify$App.coverage" NAME="App Coverage Results" MODIFIED="1735839267793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
+    <SUITE FILE_PATH="coverage/Phishify$App.coverage" NAME="App Coverage Results" MODIFIED="1737212900341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
   </component>
 </project>

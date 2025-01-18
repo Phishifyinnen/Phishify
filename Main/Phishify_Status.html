@@ -40,35 +40,31 @@
     }
 </script>
 <br>
-<button id="speichernButton" onclick="reported()">Reported</button>
-<button id="speichernButton" onclick="nothing()">Nothing</button>
-<button id="speichernButton" onclick="failed()">Failed</button>
+<button onclick="changeColor('green');">Reported</button>
+<button onclick="changeColor('grey');">Nothing</button>
+<button onclick="changeColor('red');">Failed</button>
+
 <div id="userList">
-    <div class="users_userList">user1</div>
-    <div class="users_userList">user2</div>
-    <div class="users_userList">user3</div>
-    <div class="users_userList">user4</div>
-    <div class="users_userList">user5</div>
-    <div class="users_userList">user6</div>
-    <div class="users_userList">user7</div>
-    <div class="users_userList">user8</div>
+    <div id="1" class="users_userList">user1</div>
+    <div id="2" class="users_userList">user2</div>
+    <div id="3" class="users_userList">user3</div>
+    <div id="4" class="users_userList">user4</div>
+    <div id="5" class="users_userList">user5</div>
+    <div id="6" class="users_userList">user6</div>
+    <div id="7" class="users_userList">user7</div>
+    <div id="8" class="users_userList">user8</div>
 </div>
 <script>
 // Get the root element
 var r = document.querySelector(':root');
+let id = 0;
 
-function reported() {
-  changeColor("green");
-}
-function nothing() {
-  changeColor("grey");
-}
-function failed() {
-  changeColor("red");
-}
 function changeColor(color) {
-    r.style.setProperty('--status-color', color);
+    //r.style.setProperty('--status-color', color);
+    id !== 8 ? id++ : id = 1
+    document.getElementById(id).style.backgroundColor = color;
 }
+
 </script>
 
 </body>

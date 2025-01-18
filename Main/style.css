@@ -48,6 +48,92 @@ button {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 
 }
+  #login-dialog {
+        width: 450px;
+        height: 450px;
+        border: 6px solid #778DA9;
+        border-radius: 20px;
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #1B263B;
+    }
+
+    dialog {
+        padding: 0;
+    }
+
+    dialog .wrapper {
+        padding: 70px;
+    }
+
+    dialog::backdrop {
+        backdrop-filter: blur(2px);
+    }
+    /* Slider-Container */
+
+    .slider-container {
+        margin: 20px auto;
+        width: 300px;
+        height: 45px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    #sliderValue {
+        color: white;
+    }
+
+    #text {
+        color: white;
+    }
+
+    #sliderValueNumber {
+        color: white;
+    }
+ /* Slider Styling */
+
+    input[type="range"] {
+        -webkit-appearance: none; /* Entfernt das Standard-Styling */
+        appearance: none; /* Entfernt das Standard-Styling */
+        width: 160px;
+        height: 5px;
+        background: #E0E1DD; /* Hintergrundfarbe des Sliders */
+        border-radius: 5px;
+        outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+        height: 5px;
+        background: #778DA9; /* Farbe des Tracks */
+        border-radius: 5px;
+    }
+
+    input[type="range"]::-moz-range-track {
+        height: 5px;
+        background: #778DA9; /* Farbe des Tracks */
+        border-radius: 5px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        width: 15px; /* Größe des Daumens */
+        height: 15px; /* Höhe des Daumens */
+        background: white; /* Farbe des Daumens */
+        border-radius: 50%; /* Rundet den Daumen */
+        border: 3px solid #778DA9; /* Umrandungsfarbe des Daumens */
+        cursor: pointer; /* Zeigt einen Zeiger-Cursor an */
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        width: 15px; /* Größe des Daumens für Firefox */
+        height: 15px;
+        background: white; /* Farbe des Daumens */
+        border-radius: 50%; /* Rundet den Daumen */
+        border: 3px solid #778DA9; /* Umrandungsfarbe für Firefox */
+        cursor: pointer;
+    }
 
 button:hover {
     background-color: var(--base-color);
@@ -107,7 +193,8 @@ textarea {
     place-items: center;
     background-color: var(--button-color);
     color: var(--text-color);
-  font-family: Poppins, "Segoe UI", sans-serif;
+    font-family: Poppins, "Segoe UI", sans-serif;
+    width: 180px;
 }
 
 #speichernButton:active{
