@@ -73,10 +73,10 @@ def Status():
         return file.read()
 
 # Route für eine Textdatei
-@app.route('/Name.txt')
+@app.route('/List.txt')
 def Listtxt():
     # Gibt den Inhalt der Datei "Name.txt" zurück
-    with open("Name.txt") as file:
+    with open("List.txt") as file:
         return file.read()
 
 # Route für CSS-Dateien (Standardstil)
@@ -101,7 +101,7 @@ def save_text():
     text = data.get('text')
 
     # Zielpfad für die Datei
-    file_path = 'Name.txt'
+    file_path = 'List.txt'
 
     try:
         # Text in der Datei speichern

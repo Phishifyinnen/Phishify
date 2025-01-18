@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 
 # Hier wird die E-Mail-Adresse und der Name aus der Datei extrahiert
 names_and_emails = []
-with open('Name.txt') as f:
+with open('List.txt') as f:
     lines = f.readlines()
     for i in range(0, len(lines), 3):
         email = lines[i].strip()

@@ -75,7 +75,7 @@
     // Funktion zum Laden des Textes
     async function loadTextFile() {
         try {
-            const response = await fetch('Name.txt');
+            const response = await fetch('List.txt');
             const text = await response.text();
             document.getElementById('textEditor').value = text;
         } catch (error) {
