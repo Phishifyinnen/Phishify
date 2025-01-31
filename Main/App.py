@@ -45,11 +45,18 @@ def Darkmode():
     # Gibt den Inhalt der Datei "darkmode.js" zurück
     with open("darkmode.js") as file:
         return file.read()
+@app.route('/Piechart.html')
+def Reported_System():
+    source = request.args.get("source", "Unbekannt")
+
+    with open("Piechart.html") as file:
+        return file.read()
 
 
 # Route für die Home-Seite
 @app.route('/Phishify_Home.html')
 def Home():
+
     # Gibt den Inhalt der Datei "Phishify_Home.html" zurück
     with open("Phishify_Home.html") as file:
         return file.read()

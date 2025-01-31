@@ -40,28 +40,54 @@
     }
 </script>
 <br>
-<button onclick="changeColor('green');">Reported</button>
-<button onclick="changeColor('grey');">Nothing</button>
-<button onclick="changeColor('red');">Failed</button>
 
 <div id="userList">
-    <div id="1" class="users_userList">user1</div>
-    <div id="2" class="users_userList">user2</div>
-    <div id="3" class="users_userList">user3</div>
-    <div id="4" class="users_userList">user4</div>
-    <div id="5" class="users_userList">user5</div>
-    <div id="6" class="users_userList">user6</div>
-    <div id="7" class="users_userList">user7</div>
-    <div id="8" class="users_userList">user8</div>
+    <div href="/Piechart.html" onclick="redirectWithSource(event)" class="users_userList">user1</div>
+    <div href="/Piechart.html" onclick="redirectWithSource(event)" class="users_userList">user2</div>
+    <div href="/Piechart.html" onclick="redirectWithSource(event)" class="users_userList">user3</div>
+    <div href="/Piechart.html" onclick="redirectWithSource(event)" class="users_userList">user4</div>
+    <div href="/Piechart.html" onclick="redirectWithSource(event)" class="users_userList">user5</div>
+    <div href="/Piechart.html" onclick="redirectWithSource(event)" class="users_userList">user6</div>
+    <div href="/Piechart.html" onclick="redirectWithSource(event)" class="users_userList">user7</div>
+
 </div>
 <script>
+function redirectWithSource(event) {
+    event.preventDefault();
+    let element = event.target;
+    let source = element.innerText;
+    window.location.href = "/Piechart.html?source=" + encodeURIComponent(source);
+}
 // Get the root element
 var r = document.querySelector(':root');
-let id = 0;
+let color;
+let allStatusNumber = [];
+let allStatusColorIndex = [];
 
-function changeColor(color) {
+function whatColor(id){
+    //if is tmp later it will change to color index by status
+    let arrayIndex = allStatusNumber.indexOf(id);
+    let colorIndex = allStatusColorIndex[arrayIndex];
+    if (colorIndex < 3){
+        colorIndex++;
+        allStatusColorIndex[arrayIndex] = colorIndex;
+    }else{
+        colorIndex = 1;
+        allStatusColorIndex[arrayIndex] = colorIndex;
+    }
+
+    colorIndex === 1 ? color = "red" : colorIndex === 2 ? color = "grey" : color = "green"
+}
+function changeColor(id) {
     //r.style.setProperty('--status-color', color);
-    id !== 8 ? id++ : id = 1
+    //id !== 8 ? id++ : id = 1
+    if (!allStatusNumber.includes(id)){
+        allStatusNumber.push(id)
+        allStatusColorIndex.push(1)
+        console.log(allStatusNumber)
+        console.log(allStatusColorIndex)
+    }
+    whatColor(id)
     document.getElementById(id).style.backgroundColor = color;
 }
 
