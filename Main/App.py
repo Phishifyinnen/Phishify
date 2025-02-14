@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Beispielzahlen, die in der Anwendung genutzt werden können
 number1 = 42
 number2 = 17
-
+FILENAME = "namese.txt"
 # Route für die Startseite
 @app.route('/')
 def Start():
@@ -24,7 +24,17 @@ def Login():
     # Gibt den Inhalt der Datei "Phishify_Login.html" zurück
     with open("Phishify_Login.html") as file:
         return file.read()
+@app.route('/Test-Eingabe-Feld.html')
+def AccountsList():
+    # Gibt den Inhalt der Datei "Phishify_Login.html" zurück
+    with open("Test-Eingabe-Feld.html") as file:
+        return file.read()
 
+@app.route('/Add_Pepple_List.html')
+def AccountsAddList():
+    # Gibt den Inhalt der Datei "Phishify_Login.html" zurück
+    with open("Add_Pepple_List.html") as file:
+        return file.read()
 # Route für die Signup-Seite
 @app.route('/Phishify_Signup.html')
 def Signup():
@@ -220,7 +230,25 @@ def login():
 
     return render_template('Phishify_Login.html')  # Falls GET-Anfrage, Formular anzeigen
 
+@app.route('/Test-Eingabe-Feld', methods=['GET', 'POST'])
+def EingabeManuelleAccounts():
+    if request.method == 'POST':
+        # Die Werte aus den Formularfeldern abholen
+        email = request.form['E-Mail']
+        name = request.form['Name']
+        nachname = request.form['Nachname']
 
+        # In die Textdatei speichern, jeweils mit einem Zeilenumbruch nach jedem Wert
+        with open(FILENAME, 'a') as file:
+            file.write(f"{email}\n")
+            file.write(f"{name}\n")
+            file.write(f"{nachname}\n")
+            file.write("\n")  # Leere Zeile nach jedem Eintrag für bessere Lesbarkeit
+
+        return "Daten wurden gespeichert!"
+
+    # Die HTML-Datei direkt aus dem aktuellen Ordner laden
+    return render_template('Test-Eingabe-Feld.html')
 # Einstiegspunkt der Flask-Anwendung
 if __name__ == '__main__':
     app.run(debug=True)
