@@ -304,21 +304,8 @@ footer{
  width: 200px;
 }
 
-div {
-    margin: auto;
-    margin-top: 30px;
-    border-radius: 0px;
-    padding: 10px;
-    text-align: center;
-    height: 350px;
-    width: 600px;
-    background-color: #778DA9;
-    border-radius: 20px 20px 20px 20px;
-    font-family: Poppins, "Segoe UI", sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
-}
+
+
 #Absenden {
     height: 70px;
     width: 170px;
@@ -340,5 +327,16 @@ background-color: #687b94;
 #Buttons_Inside{
 height: 200px;
 width: 410px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 0px;
+    padding: 10px;
+    text-align: center;
+    background-color: #778DA9;
+    border-radius: 20px 20px 20px 20px;
+    font-family: Poppins, "Segoe UI", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
 }
 
