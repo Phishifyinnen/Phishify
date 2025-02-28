@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c0dedf2-1a93-44ff-8260-6cc32de666ec" name="Changes" comment="Muss das mache">
+      <change afterPath="$PROJECT_DIR$/Main/Status.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Phishify_Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Phishify_Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Phishify_Status.html" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Phishify_Status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/usernames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Main/usernames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/List.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Main/List.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/Piechart.html" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Piechart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/Report_System.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Report_System.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/e-mailsender.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/e-mailsender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Main/output.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -41,6 +45,9 @@
     &quot;accountId&quot;: &quot;dba15269-06e8-4be0-b23f-30ad496a3979&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -56,6 +63,7 @@
     &quot;JavaScript Debug.Piechart.html.executor&quot;: &quot;Run&quot;,
     &quot;Python.App.executor&quot;: &quot;Run&quot;,
     &quot;Python.Report_System.executor&quot;: &quot;Run&quot;,
+    &quot;Python.e-mailsender.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -132,6 +140,8 @@
       <workItem from="1737207317950" duration="3563000" />
       <workItem from="1738318016183" duration="7202000" />
       <workItem from="1738330194218" duration="4347000" />
+      <workItem from="1740145996288" duration="5072000" />
+      <workItem from="1740750666170" duration="3707000" />
     </task>
     <task id="LOCAL-00001" summary="Add files via upload">
       <option name="closed" value="true" />
@@ -226,7 +236,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="Muss das mache" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Phishify$App.coverage" NAME="App Coverage Results" MODIFIED="1739541238948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
+    <SUITE FILE_PATH="coverage/Phishify$App.coverage" NAME="App Coverage Results" MODIFIED="1740754053869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
     <SUITE FILE_PATH="coverage/Phishify$Report_System.coverage" NAME="Report_System Coverage Results" MODIFIED="1739539952270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
+    <SUITE FILE_PATH="coverage/Phishify$e_mailsender.coverage" NAME="e-mailsender Coverage Results" MODIFIED="1740752236047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
   </component>
 </project>

@@ -95,6 +95,11 @@ def Listtxt():
     # Gibt den Inhalt der Datei "Name.txt" zurück
     with open("List.txt") as file:
         return file.read()
+@app.route('/Status.txt')
+def Statustxt():
+    # Gibt den Inhalt der Datei "Name.txt" zurück
+    with open("Status.txt") as file:
+        return file.read()
 
 # Route für CSS-Dateien (Standardstil)
 @app.route('/style.css')

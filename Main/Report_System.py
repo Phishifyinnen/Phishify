@@ -9,7 +9,7 @@ with open('List.txt') as f:
         email_o = lines[i].strip()
         name = lines[i + 1].strip()
         lastname = lines[i + 2].strip()
-        email_list.append((email_o))
+        email_list.append((user_email))
 
 # IMAP-Server und Login-Daten
 IMAP_SERVER = "imap.gmail.com"  # Outlook: "imap.outlook.com"

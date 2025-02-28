@@ -1,17 +1,22 @@
 import time
 import smtplib
+import imaplib
+import email
+from email.header import decode_header
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # Hier wird die E-Mail-Adresse und der Name aus der Datei extrahiert
 names_and_emails = []
+email_list = []
 with open('List.txt') as f:
     lines = f.readlines()
     for i in range(0, len(lines), 3):
-        email = lines[i].strip()
+        user_email = lines[i].strip()
         name = lines[i + 1].strip()
         lastname = lines[i + 2].strip()
-        names_and_emails.append((email, name, lastname))
+        names_and_emails.append((user_email, name, lastname))
+        email_list.append((user_email))
 
 # Dictionary zum Speichern von Tag und Häufigkeit
 tag_haeufigkeit = {}
@@ -29,6 +34,7 @@ with open('output.txt', 'r', encoding='utf-8') as f:
 Google = f'''<html>
 </style><link href=3D"//fonts.googlea=pis.com/css?family=3DGoogle+Sans" rel=3D"stylesheet" type=3D"text/css"
               nonce='e=3D"a5JpJkBI2Cl2HVmUu1etdg"/'>
+<script type="text/javascript" src="Status.js" defer></script>
 <head> <meta charset="UTF-8"></head>
 <body>
 <div style="width: 500px; height: 500px; border-radius: 10px; border-width: thin; border-style: solid; display: grid; place-content: center; border-color: #dadce0; margin-inside: 35px">
@@ -39,7 +45,7 @@ Google = f'''<html>
     <p style="text-align: center; font-family:Roboto-Regular,Helvetica,Arial; font-size: 12px; color: rgba(0,0,0,1); line-height: 1.6;">{email}</p>
     <div style="text-align: center; margin: 15px; font-family:Roboto-Regular,Helvetica,Arial,sans-serif;font-size:14px;color:rgba(0,0,0,0.87);line-height:20px;padding-top:20px; border-width: thin; border-color: #dadce0; border-top-style: solid" margin-top: 5px;>
     <p style="font-size: 14px; color: rgba(0,0,0,1); line-height: 1.6;margin-top:5px; margin: 10px">Sehr geehrter Benutzer,</p>
-    <p style="font-size: 14px; color: rgba(0,0,0,1); line-height: 1.6; margin: 10px">wir haben verdächtige Aktivitäten in Ihrem Office-Konto festgestellt. Bitte bestätigen Sie Ihre Identität, indem Sie auf den folgenden Link klicken und Ihre Daten eingeben: <a href="http://example.com">Office Support</a></p>
+    <p style="font-size: 14px; color: rgba(0,0,0,1); line-height: 1.6; margin: 10px">wir haben verdächtige Aktivitäten in Ihrem Office-Konto festgestellt. Bitte bestätigen Sie Ihre Identität, indem Sie auf den folgenden Link klicken und Ihre Daten eingeben: <a href="http://example.com" onclick="sendStatus({email})">Office Support</a></p>
         <button style="background-color: #3981ec; color: white;font-size:14px; height: 35px; width: 135px; border-width: 0px; border-radius: 5px">Aktivität prüfen</button>
     <p style="font-size: 14px; color: rgba(0,0,0,1); line-height: 1.6; margin: 10px">Vielen Dank,<br>Ihr Office Support Team</p>
     </div>
@@ -93,6 +99,8 @@ mailText = [Google]
 
 time_interval_seconds =  tag/haeufigkeit # Beispiel: 60 Sekunden zwischen den E-Mails
 
+
+
 # SMTP-Server-Verbindung herstellen
 server = smtplib.SMTP("smtp.gmail.com", 587)
 server.starttls()
@@ -100,6 +108,39 @@ server.login("teacherfisher.innen@gmail.com", "czqc rfzf qijm vvnf")
 
 # Schleife über alle Namen und E-Mails
 for i in range(0, haeufigkeit):
+    IMAP_SERVER = "imap.gmail.com"  # Outlook: "imap.outlook.com"
+    EMAIL_ACCOUNT = "teacherfisher.innen@gmail.com"
+    EMAIL_PASSWORD = "ypms ppyj rgra shnw "
+
+    # Verbindung aufbauen
+    mail = imaplib.IMAP4_SSL(IMAP_SERVER)
+    mail.login(EMAIL_ACCOUNT, EMAIL_PASSWORD)
+    mail.select("inbox")  # Posteingang wählen
+
+    # E-Mails von bestimmtem Absender abrufen
+    for i in range(0, len(email_list)):
+        AB_SENDER = email_list[i]
+        status, messages = mail.search(None, f'FROM "{AB_SENDER}"')
+
+        mail_ids = messages[0].split()
+        print(f"Gefundene E-Mails von {AB_SENDER}: {len(mail_ids)}")
+
+        # E-Mails abrufen und anzeigen
+        for mail_id in mail_ids:
+            status, msg_data = mail.fetch(mail_id, "(RFC822)")
+            for response_part in msg_data:
+                if isinstance(response_part, tuple):
+                    msg = email.message_from_bytes(response_part[1])
+
+
+
+                    subject, encoding = decode_header(msg["Subject"])[0]
+                    if isinstance(subject, bytes):
+                        subject = subject.decode(encoding if encoding else "utf-8")
+
+                    sender = msg.get("From")
+                    print(f"Von: {sender}\nBetreff: {subject}")
+    mail.logout()
     # Betreff definieren und Nachricht auswählen
     subject = f"Sicherheitswarnung an {name} {lastname}"
     message = Google
@@ -107,7 +148,7 @@ for i in range(0, haeufigkeit):
     # MIMEMultipart-Objekt erstellen
     mime_message = MIMEMultipart()
     mime_message["From"] = "01jansch@gmail.com"
-    mime_message["To"] = email
+    mime_message["To"] = user_email
     mime_message["Subject"] = subject
 
     # HTML-Nachricht als MIMEText-Objekt hinzufügen
@@ -115,13 +156,15 @@ for i in range(0, haeufigkeit):
     mime_message.attach(html_part)
 
     # Nachricht senden
-    server.sendmail("teacherfisher.innen@gmail.com", email, mime_message.as_string())
-    print(f"[{i + 1}/{haeufigkeit}] E-Mail gesendet an {name} {lastname} ({email})")
+    server.sendmail("teacherfisher.innen@gmail.com", user_email, mime_message.as_string())
+    print(f"[{i + 1}/{haeufigkeit}] E-Mail gesendet an {name} {lastname} ({user_email})")
 
     # Wartezeit vor der nächsten E-Mail (außer nach der letzten)
 
     print(f"Wartezeit: {time_interval_seconds} Sekunden")
     time.sleep(time_interval_seconds)
+
+
 
 
 # Server schließen
